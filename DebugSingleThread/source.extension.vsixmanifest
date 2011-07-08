@@ -3,14 +3,14 @@
   <Identifier Id="9fb8ed8b-b44a-4076-b677-cbeb7b834afb">
     <Name>Debug Single Thread</Name>
     <Author>Erwin Mayer</Author>
-    <Version>1.0</Version>
+    <Version>1.1.0</Version>
     <Description xml:space="preserve">This Visual Studio 2010 extension adds two shortcuts and toolbar buttons to allow developers to easily focus on single threads while debugging multi-threaded applications.
 
 It dramatically reduces the need to manually go into the Threads window to freeze/thaw all threads but the one that needs to be followed, and therefore helps improve productivity.
 
 Features:
 - Restrict further execution to the current thread only. Will freeze all other threads. Shortcut: CTRL+T+T or snowflake button.
-- Switch to the next single thread (based on ID). Will change current thread and freeze all other threads. Shortcut: CTRL+T+J or Next button.</Description>
+- Switch to the next single thread (based on ManagedID). Will change current thread and freeze all other threads. Shortcut: CTRL+T+J or Next button.</Description>
     <Locale>1033</Locale>
     <MoreInfoUrl>http://erwinmayer.com/labs/visual-studio-2010-extension-debug-single-thread</MoreInfoUrl>
     <License>License.txt</License>

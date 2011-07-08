@@ -1,4 +1,3 @@
-C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\bin\Debug\Icon.png
 C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\bin\Debug\License.txt
 C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\bin\Debug\DebugSingleThread.dll
 C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\bin\Debug\DebugSingleThread.pdb
@@ -13,12 +12,9 @@ C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\D
 C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\obj\Debug\GenerateResource.read.1.tlog
 C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\obj\Debug\GenerateResource.write.1.tlog
 C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\obj\Debug\DebugSingleThread.cto
-C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\obj\Debug\VSCT.read.1.tlog
-C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\obj\Debug\VSCT.write.1.tlog
-C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\obj\Debug\VSPackage.resources.original
-C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\obj\Debug\CtoResourceMerger.cache
 C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\obj\Debug\DebugSingleThread.dll
 C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\obj\Debug\DebugSingleThread.pdb
 C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\obj\Debug\DebugSingleThread.pkgdef
 C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\obj\Debug\DebugSingleThread.latest.pkgdef
 C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\obj\Debug\extension.vsixmanifest
+C:\Users\Erwin\Documents\My Dropbox\SW\VisualStudioWorkspace\DebugSingleThread\DebugSingleThread\bin\Debug\Screenshot.png
