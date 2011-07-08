@@ -133,17 +133,19 @@ namespace ErwinMayerLabs.DebugSingleThread {
 
         private void SwitchToNextThread(object sender, EventArgs e) {
             try {
-                if (this.dte.Debugger.CurrentMode == EnvDTE.dbgDebugMode.dbgRunMode) this.dte.Debugger.Break();
-                if (!this.IsFocused) return;
-                var threads = new List<EnvDTE.Thread>();
+                if (this.dte.Debugger.CurrentMode != EnvDTE.dbgDebugMode.dbgBreakMode) return;
+                this.IsFocused = true;
+                var liveThreads = new List<EnvDTE.Thread>();
+                // It is still to be found how to match an EnvDTE thread to a System.Threading.Thread to sort based on the ManagedThreadID, if possible and desirable at all.
                 foreach (EnvDTE.Thread thread in this.dte.Debugger.CurrentProgram.Threads) {
-                    threads.Add(thread);
+                    if (!thread.IsAlive) continue;
+                    liveThreads.Add(thread);
                 }
-                var liveThreads = threads.Where(t => t.IsAlive).OrderBy(t => t.ID).ToList();
                 if (!liveThreads.Any()) return;
+                liveThreads = liveThreads.Where(t => t.IsAlive).OrderBy(t => t.ID).ToList();
                 var nextThread = liveThreads.Where(t => t.ID > this.dte.Debugger.CurrentThread.ID).FirstOrDefault();
                 if (nextThread == null) nextThread = liveThreads.First();
-                foreach (EnvDTE.Thread thread in liveThreads) {
+                foreach (var thread in liveThreads) {
                     if (!thread.IsFrozen) thread.Freeze();
                 }
                 nextThread.Thaw();
@@ -156,15 +158,21 @@ namespace ErwinMayerLabs.DebugSingleThread {
             var myCommand = sender as OleMenuCommand;
             if (null != myCommand) {
                 if (this.dte.Mode == EnvDTE.vsIDEMode.vsIDEModeDebug) {
-                    if (myCommand.CommandID != this.SwitchCmd.CommandID || this.IsFocused) {
+                    if (myCommand.CommandID != this.SwitchCmd.CommandID || this.dte.Debugger.CurrentMode == EnvDTE.dbgDebugMode.dbgBreakMode) {
+                        if (myCommand.CommandID != this.SwitchCmd.CommandID && this.IsFocused) {
+                            myCommand.Checked = true;
+                        }
                         myCommand.Enabled = true;
+                        myCommand.Visible = true;
                     }
                     else {
                         myCommand.Enabled = false;
+                        myCommand.Visible = false;
                     }
-                    myCommand.Visible = true;
                 }
                 else {
+                    this.IsFocused = false;
+                    myCommand.Checked = false;  
                     myCommand.Enabled = false;
                     myCommand.Visible = false;
                 }
