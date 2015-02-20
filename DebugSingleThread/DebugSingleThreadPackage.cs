@@ -22,6 +22,7 @@ using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Thread = EnvDTE.Thread;
 
 namespace ErwinMayerLabs.DebugSingleThread {
     /// <summary>
@@ -53,7 +54,7 @@ namespace ErwinMayerLabs.DebugSingleThread {
         /// initialization is the Initialize method.
         /// </summary>
         public DebugSingleThreadPackage() {
-            Trace.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}", this.ToString()));
+            Trace.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}", this));
         }
 
         /////////////////////////////////////////////////////////////////////////////
@@ -68,7 +69,7 @@ namespace ErwinMayerLabs.DebugSingleThread {
         /// where you can put all the initilaization code that rely on services provided by VisualStudio.
         /// </summary>
         protected override void Initialize() {
-            Trace.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this.ToString()));
+            Trace.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this));
             base.Initialize();
 
             //Add our command handlers for menu (commands must exist in the .vsct file)
@@ -79,8 +80,8 @@ namespace ErwinMayerLabs.DebugSingleThread {
                 var menuCommandID2 = new CommandID(GuidList.guidDebugSingleThreadCmdSet, (int)PkgCmdIDList.SwitchToNextThreadCmd);
                 this.FocusCmd = new OleMenuCommand(FocusOnCurrentThread, menuCommandID);
                 this.SwitchCmd = new OleMenuCommand(SwitchToNextThread, menuCommandID2);
-                this.FocusCmd.BeforeQueryStatus += new EventHandler(OnBeforeQueryStatus);
-                this.SwitchCmd.BeforeQueryStatus += new EventHandler(OnBeforeQueryStatus);
+                this.FocusCmd.BeforeQueryStatus += OnBeforeQueryStatus;
+                this.SwitchCmd.BeforeQueryStatus += OnBeforeQueryStatus;
 
                 mcs.AddCommand(this.FocusCmd);
                 mcs.AddCommand(this.SwitchCmd);
@@ -135,18 +136,13 @@ namespace ErwinMayerLabs.DebugSingleThread {
             try {
                 if (this.dte.Debugger.CurrentMode != EnvDTE.dbgDebugMode.dbgBreakMode) return;
                 this.IsFocused = true;
-                var liveThreads = new List<EnvDTE.Thread>();
+                var liveThreads = this.dte.Debugger.CurrentProgram.Threads.Cast<Thread>().Where(thread => thread.IsAlive).ToList();
                 // It is still to be found how to match an EnvDTE thread to a System.Threading.Thread to sort based on the ManagedThreadID, if possible and desirable at all.
-                foreach (EnvDTE.Thread thread in this.dte.Debugger.CurrentProgram.Threads) {
-                    if (!thread.IsAlive) continue;
-                    liveThreads.Add(thread);
-                }
                 if (!liveThreads.Any()) return;
                 liveThreads = liveThreads.Where(t => t.IsAlive).OrderBy(t => t.ID).ToList();
-                var nextThread = liveThreads.Where(t => t.ID > this.dte.Debugger.CurrentThread.ID).FirstOrDefault();
-                if (nextThread == null) nextThread = liveThreads.First();
-                foreach (var thread in liveThreads) {
-                    if (!thread.IsFrozen) thread.Freeze();
+                var nextThread = liveThreads.FirstOrDefault(t => t.ID > this.dte.Debugger.CurrentThread.ID) ?? liveThreads.First();
+                foreach (var thread in liveThreads.Where(thread => !thread.IsFrozen)) {
+                    thread.Freeze();
                 }
                 nextThread.Thaw();
                 this.dte.Debugger.CurrentThread = nextThread;

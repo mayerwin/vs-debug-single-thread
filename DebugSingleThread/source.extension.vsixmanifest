@@ -3,7 +3,7 @@
   <Identifier Id="9fb8ed8b-b44a-4076-b677-cbeb7b834afb">
     <Name>Debug Single Thread</Name>
     <Author>Erwin Mayer</Author>
-    <Version>1.1.0</Version>
+    <Version>1.1.2</Version>
     <Description xml:space="preserve">This Visual Studio 2010 extension adds two shortcuts and toolbar buttons to allow developers to easily focus on single threads while debugging multi-threaded applications.
 
 It dramatically reduces the need to manually go into the Threads window to freeze/thaw all threads but the one that needs to be followed, and therefore helps improve productivity.
@@ -19,10 +19,28 @@ Features:
     <InstalledByMsi>false</InstalledByMsi>
     <SupportedProducts>
       <VisualStudio Version="10.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
         <Edition>Pro</Edition>
+        <Edition>VSLS</Edition>
+        <Edition>IntegratedShell</Edition>
+      </VisualStudio>
+      <VisualStudio Version="11.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+        <Edition>VSLS</Edition>
+        <Edition>IntegratedShell</Edition>
+      </VisualStudio>
+      <VisualStudio Version="12.0">
+        <Edition>Ultimate</Edition>
+        <Edition>Premium</Edition>
+        <Edition>Pro</Edition>
+        <Edition>VSLS</Edition>
+        <Edition>IntegratedShell</Edition>
       </VisualStudio>
     </SupportedProducts>
-    <SupportedFrameworkRuntimeEdition MinVersion="1.0" MaxVersion="4.0" />
+    <SupportedFrameworkRuntimeEdition MinVersion="1.0" MaxVersion="4.5" />
   </Identifier>
   <References>
     <Reference Id="Microsoft.VisualStudio.MPF" MinVersion="10.0">
