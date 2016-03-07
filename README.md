@@ -1,4 +1,5 @@
 # Debug Single Thread - Visual Studio Extension
+![Screenshot](/DebugSingleThread/Screenshot.png?raw=true "Screenshot")
 
 This is the official repository for:  
 http://visualstudiogallery.msdn.microsoft.com/54ef0f07-ed1d-4b89-b4ae-6506b196f843
