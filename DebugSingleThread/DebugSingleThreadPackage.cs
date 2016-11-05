@@ -108,7 +108,12 @@ namespace ErwinMayerLabs.DebugSingleThread {
                 if (this.dte.Debugger.CurrentMode == EnvDTE.dbgDebugMode.dbgRunMode) this.dte.Debugger.Break();
                 foreach (EnvDTE.Thread thread in this.dte.Debugger.CurrentProgram.Threads) {
                     if (!this.IsFocused) {
-                        if (thread.IsAlive && thread.ID != this.dte.Debugger.CurrentThread.ID) {
+                        if (thread.ID == this.dte.Debugger.CurrentThread.ID) {
+                            if (thread.IsFrozen) {
+                                thread.Thaw();
+                            }
+                        }
+                        else if (thread.IsAlive) {
                             thread.Freeze();
                         }
                     }
@@ -129,7 +134,9 @@ namespace ErwinMayerLabs.DebugSingleThread {
                     this.SwitchCmd.Enabled = false;
                 }
             }
-            catch (Exception) {}
+            catch (Exception) {
+                // ignored
+            }
         }
 
         private void SwitchToNextThread(object sender, EventArgs e) {
@@ -147,15 +154,17 @@ namespace ErwinMayerLabs.DebugSingleThread {
                 nextThread.Thaw();
                 this.dte.Debugger.CurrentThread = nextThread;
             }
-            catch (Exception) {}
+            catch (Exception) {
+                // ignored
+            }
         }
 
         private void OnBeforeQueryStatus(object sender, EventArgs e) {
             var myCommand = sender as OleMenuCommand;
             if (null != myCommand) {
                 if (this.dte.Mode == EnvDTE.vsIDEMode.vsIDEModeDebug) {
-                    if (myCommand.CommandID != this.SwitchCmd.CommandID || this.dte.Debugger.CurrentMode == EnvDTE.dbgDebugMode.dbgBreakMode) {
-                        if (myCommand.CommandID != this.SwitchCmd.CommandID && this.IsFocused) {
+                    if (myCommand.CommandID.Guid != this.SwitchCmd.CommandID.Guid || this.dte.Debugger.CurrentMode == EnvDTE.dbgDebugMode.dbgBreakMode) {
+                        if (myCommand.CommandID.Guid != this.SwitchCmd.CommandID.Guid && this.IsFocused) {
                             myCommand.Checked = true;
                         }
                         myCommand.Enabled = true;
