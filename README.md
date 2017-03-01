@@ -2,7 +2,7 @@
 ![Screenshot](/DebugSingleThread/Screenshot.png?raw=true "Screenshot")
 
 This is the official repository for:  
-http://visualstudiogallery.msdn.microsoft.com/54ef0f07-ed1d-4b89-b4ae-6506b196f843
+https://marketplace.visualstudio.com/items?itemName=mayerwin.DebugSingleThread
 
 Initial release page here:  
 http://erwinmayer.com/labs/visual-studio-2010-extension-debug-single-thread
@@ -18,7 +18,9 @@ It dramatically reduces the need to manually go into the Threads window to freez
 
 **Supported editions**
 
-Visual Studio 2010, 2012, 2013, 2015+.
+Visual Studio 2012, 2013, 2015, 2017+.
+
+Visual Studio 2010 support has been dropped due to limitations imposed by Microsoft's VSIX format to support Visual Studio 2017. The last stable release supporting Visual Studio 2010 can however be downloaded [here](https://github.com/mayerwin/vs-debug-single-thread/releases/tag/1.1.3).
 
 You are welcome to contribute to this project!
 

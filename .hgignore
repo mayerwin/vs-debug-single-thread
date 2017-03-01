@@ -36,3 +36,5 @@ _ReSharper*/
 *.[Pp]ublish.xml
 *.resharper
 var/
+*.sln.ide
+Reviews

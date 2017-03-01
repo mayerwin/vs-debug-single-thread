@@ -1,6 +1,3 @@
-Reviews/
-RenameVSWindowTitle/bin/
-RenameVSWindowTitle/obj/
 .vs/
 *.suo
 *.csproj.user
@@ -18,3 +15,4 @@ _ReSharper*/
 var/
 *.sln.ide
 Reviews
+packages/
