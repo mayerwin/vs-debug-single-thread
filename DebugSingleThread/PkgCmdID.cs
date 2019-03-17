@@ -8,7 +8,5 @@ namespace ErwinMayerLabs.DebugSingleThread
     {
         public const uint FocusOnCurrentThreadCmd = 0x100;
         public const uint SwitchToNextThreadCmd = 0x101;
-
-
     };
 }
