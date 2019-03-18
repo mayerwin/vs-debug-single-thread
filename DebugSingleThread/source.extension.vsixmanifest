@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
-    <Metadata>
-        <Identity Id="9fb8ed8b-b44a-4076-b677-cbeb7b834afb" Version="2.0.0" Language="en-US" Publisher="Erwin Mayer" />
-        <DisplayName>Debug Single Thread</DisplayName>
-        <Description xml:space="preserve">This Visual Studio extension adds two shortcuts and toolbar buttons to allow developers to easily focus on single threads while debugging multi-threaded applications.
+  <Metadata>
+    <Identity Id="9fb8ed8b-b44a-4076-b677-cbeb7b834afb" Version="2.1.0" Language="en-US" Publisher="Erwin Mayer" />
+    <DisplayName>Debug Single Thread</DisplayName>
+    <Description xml:space="preserve">This Visual Studio extension adds two shortcuts and toolbar buttons to allow developers to easily focus on single threads while debugging multi-threaded applications.
 
 It dramatically reduces the need to manually go into the Threads window to freeze/thaw all threads but the one that needs to be followed, and therefore helps improve productivity.
 
 Features:
 - Restrict further execution to the current thread only. Will freeze all other threads. Shortcut: CTRL+T+T or snowflake button.
 - Switch to the next single thread (based on ManagedID). Will change current thread and freeze all other threads. Shortcut: CTRL+T+J or Next button.</Description>
-        <MoreInfo>https://erwinmayer.com/labs/visual-studio-2010-extension-debug-single-thread</MoreInfo>
-        <License>License.txt</License>
-        <Icon>Icon.png</Icon>
-        <PreviewImage>Screenshot.png</PreviewImage>
-        <Tags>Multi-Threaded, Debugging, Single Thread, Thread Focus</Tags>
-    </Metadata>
-    <Installation>
-        <InstallationTarget Version="[14.0,)" Id="Microsoft.VisualStudio.Community" />
-        <InstallationTarget Version="[14.0,)" Id="Microsoft.VisualStudio.Pro" />
-        <InstallationTarget Version="[14.0,)" Id="Microsoft.VisualStudio.Enterprise" />
-        <InstallationTarget Version="[14.0,)" Id="Microsoft.VisualStudio.IntegratedShell" />
-    </Installation>
-    <Dependencies>
-        <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
-    </Dependencies>
-    <Prerequisites>
-        <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[14.0,)" DisplayName="Visual Studio core editor" />
-    </Prerequisites>
-    <Assets>
-        <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-    </Assets>
+    <MoreInfo>https://erwinmayer.com/labs/visual-studio-2010-extension-debug-single-thread</MoreInfo>
+    <License>License.txt</License>
+    <Icon>Icon.png</Icon>
+    <PreviewImage>Screenshot.png</PreviewImage>
+    <Tags>Multi-Threaded, Debugging, Single Thread, Thread Focus</Tags>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Version="[14.0,)" Id="Microsoft.VisualStudio.Community" />
+    <InstallationTarget Version="[14.0,)" Id="Microsoft.VisualStudio.Pro" />
+    <InstallationTarget Version="[14.0,)" Id="Microsoft.VisualStudio.Enterprise" />
+    <InstallationTarget Version="[14.0,)" Id="Microsoft.VisualStudio.IntegratedShell" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+  </Dependencies>
+  <Prerequisites>
+    <Prerequisite Id="Microsoft.VisualStudio.Component.CoreEditor" Version="[14.0,)" DisplayName="Visual Studio core editor" />
+  </Prerequisites>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+  </Assets>
 </PackageManifest>
