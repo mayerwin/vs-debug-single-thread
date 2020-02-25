@@ -13,7 +13,7 @@ This Visual Studio extension adds two shortcuts and toolbar buttons to allow dev
 It dramatically reduces the need to manually go into the Threads window to freeze/thaw all threads but the one that needs to be followed, and therefore helps improve productivity.
 
 **Features**
-- Restrict further execution to the current thread only. Will freeze all other threads. Shortcut: `CTRL+T+T` or `snowflake` button.  
+- Restrict further execution to the current thread only. Will freeze all other threads. Shortcut: `CTRL+T+T` or `snowflake` button. Click button again to thaw all other threads. Known frozen threads before the command runs (e.g. due to a breakpoint) will be remembered and not thawed. If this is not what you expect, please let me know so I can add the option to customize behavior.
 - Switch to the next single thread (based on ID). Will change current thread and freeze all other threads. Shortcut: `CTRL+T+J` or `Next` button.
 
 **Supported editions**
