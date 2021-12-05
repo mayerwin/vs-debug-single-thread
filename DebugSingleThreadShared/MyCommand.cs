@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
-using System.Windows.Input;
 using Microsoft.VisualStudio.Shell;
 using Task = System.Threading.Tasks.Task;
 using Thread = EnvDTE.Thread;

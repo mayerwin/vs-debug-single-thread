@@ -3,7 +3,6 @@
 *.csproj.user
 *.bak
 [Bb]in
-[Dd]ebug*/
 obj/
 [Rr]elease*/
 _ReSharper*/
