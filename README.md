@@ -1,5 +1,5 @@
 # Debug Single Thread - Visual Studio Extension
-![Screenshot](/DebugSingleThread/Screenshot.png?raw=true "Screenshot")
+![Screenshot](/DebugSingleThreadSharedFolder/Screenshot.png?raw=true "Screenshot")
 
 This is the official repository for:  
 https://marketplace.visualstudio.com/items?itemName=mayerwin.DebugSingleThread
