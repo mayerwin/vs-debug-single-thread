@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
     <Metadata>
-        <Identity Id="DebugSingleThread2022.982e9837-8e92-4f77-8396-cf37955fa3b2" Version="4.0.0" Language="en-US" Publisher="Erwin Mayer" />
+        <Identity Id="9fb8ed8b-b44a-4076-b677-cbeb7b834afb" Version="4.0.2" Language="en-US" Publisher="Erwin Mayer" />
         <DisplayName>Debug Single Thread</DisplayName>
         <Description xml:space="preserve">This Visual Studio extension adds two shortcuts and toolbar buttons to allow developers to easily focus on single threads while debugging multi-threaded applications.
 
@@ -11,22 +11,22 @@ Features:
 - Restrict further execution to the current thread only. Will freeze all other threads. Shortcut: CTRL+T+T or snowflake button. Click button again to thaw all other threads. Known frozen threads before the command runs (e.g. due to a breakpoint) will be remembered and not thawed. If this is not what you expect, please let me know so I can add the option to customize behavior.
 - Switch to the next single thread (based on ManagedID). Will change current thread and freeze all other threads. Shortcut: CTRL+T+J or Next button.</Description>
         <MoreInfo>https://erwinmayer.com/labs/visual-studio-2010-extension-debug-single-thread</MoreInfo>
-		<License>License.txt</License>
-		<Icon>Icon.png</Icon>
-		<PreviewImage>Screenshot.png</PreviewImage>
-		<Tags>Multi-Threaded, Debugging, Single Thread, Thread Focus</Tags>
+        <License>License.txt</License>
+        <Icon>Icon.png</Icon>
+        <PreviewImage>Screenshot.png</PreviewImage>
+        <Tags>Multi-Threaded, Debugging, Single Thread, Thread Focus</Tags>
     </Metadata>
-	<Installation>
-		<InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,)">
-			<ProductArchitecture>amd64</ProductArchitecture>
-		</InstallationTarget>
-		<InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.0,)">
-			<ProductArchitecture>amd64</ProductArchitecture>
-		</InstallationTarget>
-		<InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.0,)">
-			<ProductArchitecture>amd64</ProductArchitecture>
-		</InstallationTarget>
-	</Installation>
+    <Installation>
+        <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0,)">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[17.0,)">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+        <InstallationTarget Id="Microsoft.VisualStudio.Enterprise" Version="[17.0,)">
+            <ProductArchitecture>amd64</ProductArchitecture>
+        </InstallationTarget>
+    </Installation>
     <Dependencies>
         <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
     </Dependencies>
