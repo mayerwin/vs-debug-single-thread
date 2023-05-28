@@ -20,7 +20,7 @@ It dramatically reduces the need to manually go into the Threads window to freez
 
 Visual Studio 2015, 2017, 2019, 2022+.
 
-Visual Studio 2019 support has been temporarily dropped due to limitations imposed by Microsoft's Visual Studio Marketplace. The last stable release (4.0.0) supporting Visual Studio 2019 can however be downloaded [here](https://github.com/mayerwin/vs-debug-single-thread/releases/tag/4.0.0).
+Visual Studio 2017 and 2019 support has been temporarily dropped due to limitations imposed by Microsoft's Visual Studio Marketplace. The last stable release (4.0.0) supporting Visual Studio 2019 can however be downloaded [here](https://github.com/mayerwin/vs-debug-single-thread/releases/tag/4.0.0).
 
 Visual Studio 2012 and 2013 support has been dropped due to new requirements imposed by Microsoft to speed up loading time with AsyncPackage. The last stable release supporting Visual Studio 2012 and 2013 can however be downloaded [here](https://github.com/mayerwin/vs-debug-single-thread/releases/tag/1.1.3_2012-2017).
 
